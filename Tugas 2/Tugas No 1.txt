@@ -1,0 +1,42 @@
+uses wincrt;
+var
+   i,b,c: real;
+begin
+    i:=3.0;
+    b:=2.0;
+    c:=0.0;
+    i:=i+i;
+    b:=b+i;
+    c:=c*i;
+    write('Nilai i=',i,' b=',b,' c=',c);
+    readkey;
+end.
+
+Hasil dari program di atas adalah:
+
+Nilai i= 6.000000000000000E+000 b= 8.000000000000000E+000 c= 0.000000000000000E+000
+Karena i,b,c adalah variabel bertipe real.
+Nilai i = i (3.0) + i (3.0) = 6.000000000000000E+000
+Nilai b = b (2.0) + i (6.000000000000000E+000) = 8.000000000000000E+000
+		   Nilai i jadi 6.000000000000000E+000 karena sudah di tambahkan terlebih dahulu di perintah sebelumnya.
+Nilai c = C (0.0) * i (6.000000000000000E+000) = 0.000000000000000E+000
+
+Tetapi jika program tersebut di tambah ":2:2" maka hasil nol nya akan di batasi seperti di bawah:
+
+uses wincrt;
+var
+   i,b,c: real;
+begin
+    i:=3.0;
+    b:=2.0;
+    c:=0.0;
+    i:=i+i;
+    b:=b+i;
+    c:=c*i;
+    write('Nilai i=',i:2:2,' b=',b:2:2,' c=',c:2:2);
+    readkey;
+end.
+
+
+
+Nilai i=6.00 b=8.00 c=0.00
