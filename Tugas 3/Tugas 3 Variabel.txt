@@ -1,0 +1,21 @@
+Program MencariNilaiMaksimum;
+uses crt;
+var
+a,b,c:integer;
+begin
+writeln ('>>>Mencari Nilai Maksimum<<<');
+writeln;
+write ('Masukan Nilai Pertama : ');readln(a);
+write ('Masukan Nilai Kedua   : ');readln(b);
+write ('MAsukan Nilai Ketiga  : ');readln(c);
+writeln;
+   if (a>b) and (a>c) then
+     write (a, ' Nilai Maksimum ')
+else
+   if (b>a) and (b>c) then
+     write (b, ' Nilai Maksimum ')
+else
+   if (c>a) and (c>b) then
+     write (c, ' Nilai Maksimum ');
+readkey;
+end.

@@ -1,0 +1,57 @@
+Program Gaji_Karyawan;
+uses crt;
+
+var
+GajiPokok,Tunjangan,PotonganIuran,GajiBersih: real;
+Golongan,Status: integer;
+Nama,Gol,St: string;
+
+begin
+writeln('Golongan              : 1.A 2.B');
+writeln('Status                : 1.Belum 2.Nikah');
+      write('Masukan Nama Karyawan : ');readln(Nama);
+      write('Golongan              : ');readln(Golongan);
+         if(Golongan = 1)then
+           begin
+             GajiPokok:=200000;
+             Gol:='A'
+end
+else
+         if(Golongan = 2)then
+           begin
+            GajiPokok:=350000;
+            Gol:='B';
+end
+else
+writeln('>>>>>>>>>>>><<<<<<<<<<<');
+write('Status (Nikah/Belum)  : ');read(status);
+       if (status = 1)then
+          begin
+            Tunjangan:=50000;
+            Tunjangan:=60000;
+            St:='Belum';
+end
+else
+      if(status = 2) then
+         begin
+           Tunjangan:=25000;
+           Tunjangan:=75000;
+           St:='Nikah';
+write('Potongan Iuran        : ');readln(PotonganIuran);
+     if(GajiPokok <= 300000)then
+          PotonganIuran:=(GajiPokok+Tunjangan)*0.05;
+     if(GajiPokok > 300000)then
+          PotonganIuran:=(GajiPokok+Tunjangan)*0.1;
+writeln('////////////\\\\\\\\\\\\');
+writeln('Nama Karyawan         : ',Nama);
+writeln('Golongan A/B          : ',Gol);
+writeln('Status (Nikah/Belum)  : ',St);
+writeln('Gaji Pokok            : Rp. ',GajiPokok:5:2);
+writeln('Tunjangan             : Rp. ',Tunjangan:5:2);
+writeln('Potongan Iuran        : Rp. ',PotonganIuran:5:2);
+     GajiBersih:=GajiPokok+Tunjangan-PotonganIuran;
+writeln('Gaji Bersih           : Rp. ',GajiBersih:5:2);
+readln;
+readkey;
+end;
+end.
