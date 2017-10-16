@@ -1,0 +1,29 @@
+Program Hitung_Diskon;
+uses crt;
+var
+HargaNormal,BesarDiskon,HargaAkhir: real;
+CekDiskon,CekMember : boolean;
+a,b : string;
+begin
+writeln('Muhammad Fahri Fauzi');
+writeln('Sistem Informasi');
+writeln('Oct, 15th 2017');
+writeln;
+write('Masukan Harga Normal Baju : Rp. ');readln(HargaNormal);
+write('Diskon ? (Y/N)            : ');readln(a);
+      CekDiskon:=a='Y';
+write('Member ? (Y/N)            : ');readln(b);
+      CekMember:=b='Y';
+   if(CekDiskon AND CekMember) then
+      BesarDiskon:=0.25*HargaNormal
+else
+   if(CekDiskon AND NOT(CekMember)) then
+      BesarDiskon:=0.20*HargaNormal
+else
+   if(NOT(CekDiskon) AND NOT(CekMember)) then
+      BesarDiskon:=0.00*HargaNormal;
+         HargaAkhir:=HargaNormal-BesarDiskon;
+         writeln('Harga Akhir               : Rp. ',HargaAkhir:5:0);
+   readln;
+  readkey;
+end.
