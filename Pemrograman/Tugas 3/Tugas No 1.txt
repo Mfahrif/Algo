@@ -1,0 +1,6 @@
+Tampilan dari program Nomor 1:
+
+Absen = 100.00 UTS = 60.00
+Tugas = 80.00 UAS = 50.00
+Quiz = 40.00
+Huruf Mutu : D
