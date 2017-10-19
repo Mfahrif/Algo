@@ -1,0 +1,15 @@
+3. Buat program untuk menghitung luas suatu bidang datar!
+
+----------------------------------------------------------
+
+uses crt;
+var
+   a,t:integer;
+   Hasil:integer;
+begin
+     write('Masukan Alas = ');readln(a);
+     write('Masukan Tinggi = ');readln(t);
+     Hasil:=a*t;
+     write('Luas Jajar Genjang = ',a,'*',t,' = ',Hasil);
+readkey;
+end.
