@@ -1,0 +1,30 @@
+Program Kalkulator;
+uses crt;
+var
+Bil1,Bil2 : integer;
+Simbol    : char;
+Hasil     : real;
+begin
+Writeln('Muhammad Fahri Fauzi');
+Writeln('Sistem Informasi');
+Writeln('Senin, 2017 10 09');
+writeln;
+writeln('>>>>>>>Kalkulator<<<<<<<');
+writeln;
+writeln('Simbol : (+) (-) (*) (/)');
+writeln;
+write('Masukan Angka  : ');readln(Bil1);
+write('Masukan Simbol : ');readln(Simbol);
+write('Masukan Angka  : ');readln(Bil2);
+    if (Simbol='+') then
+       Hasil := bil1+bil2;
+    if (Simbol='-') then
+       Hasil := bil1-bil2;
+    if (Simbol='*') then
+       Hasil := bil1*bil2;
+    if (Simbol='/') then
+       Hasil := bil1/bil2;
+  writeln;
+    writeln('Hasil Operasi : ',Hasil:2:2);
+ readln;
+end.
