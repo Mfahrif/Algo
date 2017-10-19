@@ -1,0 +1,16 @@
+Program Faktorial;
+uses crt;
+var
+i,n,f : integer;
+begin
+write('Masukan Bilangan : ');readln(n);
+writeln;
+    f:=1;
+    while i < n do
+  begin
+    i:=i+1;
+    f:=f*i;
+  end;
+    writeln(n,'!               : ',f);
+  readkey;
+end.

@@ -1,0 +1,21 @@
+Program Sinus_Cosinus;
+uses crt;
+var
+x : integer;
+sinus,cosinus : real;
+begin
+clrscr;
+writeln('=============================');
+writeln('    X      Sinus   Cosinus   ');
+writeln('-----------------------------');
+    x:=0;
+    while x <=360 do
+  begin
+    sinus:=sin(x/57.2958);
+    cosinus:=cos(x/57.2958);
+    writeln(x:5,sinus:10:2,cosinus:10:2);
+    x:=x+30;
+  end;
+writeln('=============================');
+readln;
+end.
