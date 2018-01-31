@@ -1,0 +1,50 @@
+Program Nilai_Mata_Kuliah;
+uses crt;
+
+var
+  Alpro,SBO,RTI,BI,PS : integer;
+   MKAlpro,MKSBO,MKRTI,MKBI,MKPS: string;
+begin
+  clrscr;
+  writeln ('Program Nilai Mata Kuliah');
+  writeln ('Muhammad Fahri Fauzi');
+  writeln('Sistem Informasi');
+  writeln('Date : Senin, 09 Oktober 2017');
+  writeln ('=============================');
+  writeln;
+  write ('Masukkan Nilai Alpro            =  ');readln (Alpro);
+  write ('Masukkan Nilai SBO              =  ');readln (SBO);
+  write ('Masukkan Nilai RTI              =  ');readln (RTI);
+  write ('Masukkan Nilai Bahasa Indonesia =  ');readln (BI);
+  write ('Masukkan Nilai Pancasila        =  ');readln (PS);
+
+  if (Alpro > 50) and (SBO > 50) and (RTI > 50) and (BI > 50) and (PS > 50) then
+    begin
+    writeln ('Tidak ada remedial');
+    end
+  else
+    begin
+      if Alpro <= 50 then
+        begin
+        MKAlpro := 'Alpro'
+        end;
+      if SBO <= 50 then
+         begin
+        MKSBO := 'SBO'
+        end;
+      if RTI <= 50 then
+        begin
+        MKRTI := 'RTI'
+        end;
+      if BI <= 50 then
+        begin
+        MKBI := 'BI'
+        end;
+      if PS <= 50 then
+        begin
+        MKPS := 'PS'
+        end;
+    write('Remedial : '+MKAlpro+' '+MKSBO+' '+MKRTI+' '+MKBI+' '+MKPS);
+    end; 
+  readln;
+end.
