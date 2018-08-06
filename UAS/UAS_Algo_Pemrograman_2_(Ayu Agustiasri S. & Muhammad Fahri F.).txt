@@ -1,0 +1,337 @@
+{
+ Transkrip Nilai
+ Hasil Revisi Sebanyak 12 kali
+ Dibuat Oleh : Ayu Agustiasri S.
+               Muhammad Fahri F.
+ }
+
+program Transkrip_Nilai;
+uses crt;
+const
+  jml_data = 10;
+type
+  tmhs = record
+           nm      : string;
+           nim     : shortstring;
+           absensi : real;
+           tugas   : real;
+		   UTS     : real;
+		   UAS     : real;
+           abs     : real;
+           tg      : real;
+           quiz    : real;
+		   UTSp    : real;
+		   UASp    : real;
+           qz      : real;
+           mk      : ShortString;
+		   total   : real;
+           hf      : char;
+           prd     : string;
+           ds      : string;
+           sks     : real;
+           am : real;
+           ket : string;
+
+         end;
+  tarr_mhs = array [1..jml_data] of tmhs;
+
+  function menu:char;
+  begin
+    clrscr;
+    writeln('<><><><><><><><><><><><><><>');
+    writeln('> 1. Input Data Mahasiswa  <');
+    writeln('> 2. Output Data Mahasiswa <');
+    writeln('<><><><><><><><><><><><><><>');
+    writeln('> 0. Keluar                <');
+    writeln('<><><><><><><><><><><><><><>');
+    write('Pilih menu : '); readln(menu);
+
+  end;
+
+  procedure input_data(idx:integer;var data:tarr_mhs);
+  begin
+  //Input Data Mahasiswa
+     WRITELN(' |-----------------|');
+     WRITELN(' |     KODE MK     |');
+     WRITELN(' |-----------------|');
+     WRITELN(' |     SIF304      |');
+     WRITELN(' |     TIF302      |');
+     WRITELN(' |     FTI211      |');
+     WRITELN(' |     FTI205      |');
+     WRITELN(' |     UBB101      |');
+     WRITELN(' |     FTI209      |');
+     WRITELN(' |-----------------|');
+     writeln;
+     writeln('Data Mahasiswa ke-',idx);
+     WRITELN;
+     write('NIM              : ');readln(data[idx].nim);
+     write('Kode Mata Kuliah : ');readln(data[idx].mk);
+     write('Nilai Absensi    : ');readln(data[idx].absensi);
+     write('Nilai Tugas      : ');readln(data[idx].tugas);
+     write('Nilai Quiz       : ');readln(data[idx].quiz);
+	 write('Nilai UTS        : ');readln(data[idx].uts);
+	 write('Nilai UAS        : ');readln(data[idx].uas);
+
+
+
+
+
+  end;
+
+  procedure proses_data(var data:tmhs);
+  begin
+ //Menentukan Nama Mahasiswa
+       if (data.nim = '301170001' ) then
+          data.nm:='Fuji Endang Pratiwi'
+          else
+       if (data.nim = '301170002' ) then
+          data.nm:='Aldy Tri Putra'
+          else
+       if (data.nim = '301170003' ) then
+          data.nm:='Asep Dadi'
+          else
+       if (data.nim = '302170004' ) then
+          data.nm:='Dadan Ramdani'
+          else
+       if (data.nim = '302170006' ) then
+          data.nm:='Miftah Nurhuda Ibadurrohman'
+          else
+        if (data.nim = '301170007' ) then
+          data.nm:='Ayu Agustriasri'
+          else
+        if (data.nim = '302170009' ) then
+          data.nm:='Tobi Fadilah'
+          else
+        if (data.nim = '302170007' ) then
+          data.nm:='Muhammad Fahri Fauzi'
+          else
+        if (data.nim = '301170011' ) then
+          data.nm:='Fauzi Azhari'
+          else
+        if (data.nim = '301170012' ) then
+          data.nm:='Firman Fathurochman'
+          else
+        if (data.nim = '301170013' ) then
+          data.nm:='Fradita Audina'
+          else
+        if (data.nim = '301170019' ) then
+          data.nm:='Muhammad Rafli'
+          else
+        if (data.nim = '301170020' ) then
+          data.nm:='Neng Rina'
+          else
+        if (data.nim = '301170022' ) then
+          data.nm:='Syifa Fauziah'
+          else
+        if (data.nim = '301170023' ) then
+          data.nm:='Taufan Wisnu Mukti'
+          else
+        if (data.nim = '301170024' ) then
+          data.nm:='Yosep Bahtiar'
+          else
+        if (data.nim = '301170025' ) then
+          data.nm:='Yusuf Lutfi Wardiman';
+
+//Menentukan Program Studi
+        IF (data.nm='Mfitah Nurhuda') or (data.nm= 'Tobi Fadilah') or (Data.nm='Dadan Ramdani') or (Data.nm='Muhammad Fahri Fauzi') then
+        data.prd:='Sistem Informasi'
+     else
+        data.prd:='Teknik Informatika';
+
+//Menemtukan Mata Kuliah
+       if (data.mk = 'SIF304' )then
+      data.mk:= 'Teori Akuntansi'
+      else
+       if (data.mk = 'TIF302' )then
+       data.mk:= 'Algoritma dan Pemrograman 2'
+       else
+       if (data.mk = 'FTI211' )then
+       data.mk:= 'Kalkulus 2'
+       else
+       if data.mk ='FTI205' then
+        data.mk:= 'Praktikum Algoritma dan Pemrograman'
+        else
+         if data.mk ='UBB101' then
+        data.mk:= 'Agama'
+        else
+         if data.mk ='FTI209' then
+        data.mk:= 'Konsep Teknologi';
+
+//Menentukan Nama Dosen, Jumlah SKS, Persentase Nilai
+           if (data.mk ='Teori Akuntansi') then
+                begin
+                data.ds:='Husaeri Priatna, S.Ak.,M.M.';
+                data.sks:= 3 ;
+                data.abs:=data.absensi * 0.40;
+                data.tg:=data.tugas * 0.10;
+                data.qz:=data.quiz * 0.10;
+                data.utsp:=data.uts * 0.20;
+                data.uasp:=data.uas * 0.20;
+                end
+                else
+           if (data.mk ='Konsep Teknologi') then
+                begin
+                data.ds:='Solikin, M.T.';
+                data.sks:= 2;
+                data.abs:=data.absensi * 0.10;
+                data.tg:=data.tugas * 0.10;
+                data.qz:=data.quiz * 0.10;
+                data.utsp:=data.uts * 0.30;
+                data.uasp:=data.uas * 0.40;
+                end
+                else
+           if (data.mk ='Agama') then
+                begin
+                data.ds:='Zainusolihin, M.Ag.';
+                data.sks:= 2;
+                data.abs:=data.absensi * 0.10;
+                data.tg:=data.tugas * 0.10;
+                data.qz:=data.quiz * 0.10;
+                data.utsp:=data.uts * 0.30;
+                data.uasp:=data.uas * 0.40;
+                end
+                else
+            if (data.mk ='Algoritma dan Pemrograman 2') then
+                begin
+                data.ds:='Cecep Suwanda, S.Si';
+                data.sks:= 2;
+                data.abs:=data.absensi * 0.10;
+                data.tg:=data.tugas * 0.10;
+                data.qz:=data.quiz * 0.05;
+                data.utsp:=data.uts * 0.35;
+                data.uasp:=data.uas * 0.40;
+                end
+                else
+            if (data.mk ='Kalkulus 2') then
+                begin
+                data.ds:='Siti Ayu Rahayu, M.Pd.';
+                data.sks:= 3;
+                data.abs:=data.absensi * 0.10;
+                data.tg:=data.tugas * 0.20;
+                data.qz:=data.quiz * 0.10;
+                data.utsp:=data.uts * 0.30;
+                data.uasp:=data.uas * 0.30;
+                end
+                else
+            if (data.mk ='Praktikum Algoritma dan Pemrograman') then
+                begin
+                data.ds:='Yusup, M.T';
+                data.sks:= 3;
+                data.abs:=data.absensi * 0.10;
+                data.tg:=data.tugas * 0.10;
+                data.qz:=data.quiz * 0.10;
+                data.utsp:=data.uts * 0.35;
+                data.uasp:=data.uas * 0.35;
+                end ;
+
+ //Menentukan Huruf Mutu
+	data.total:= (data.abs)+(data.tg)+(data.qz)+(data.utsp)+(data.uasp);
+	if (data.total >= 90) then
+       begin
+	   data.hf := 'A';
+       data.am := 4.0;
+       data.ket := 'Lulus';
+       end
+	else
+	if (data.total >= 70) then
+       begin
+	   data.hf := 'B';
+       data.am := 3.5;
+       data.ket := 'Lulus';
+       end
+	else
+	if (data.total >= 50) then
+       begin
+	   data.hf := 'C';
+       data.am := 3.0;
+       data.ket := 'Lulus';
+       end
+	else
+	if (data.total >= 30) then
+       begin
+	   data.hf := 'D';
+       data.am := 2.5;
+       data.ket := 'Tidak Lulus';
+       end
+	else
+	if (data.total >= 10) then
+       begin
+	   data.hf := 'E';
+       data.am := 2.0;
+       data.ket := 'Tidak Lulus';
+       end;
+
+  end;
+
+
+  procedure output_data(jml:integer;data:tarr_mhs);
+  var
+    i:integer;
+  begin
+    if jml=0 then
+    begin
+       writeln('Tidak Ada Data !');
+       readkey;
+    end
+    else
+         for i:=1 to jml do
+         begin
+//Output Data Mahasiswa dan Nilai
+           writeln('Data Mahasiswa ke-',i);
+           writeln;
+           writeln('Nama Mahasiswa    : ',data[i].nm);
+           writeln('Prodi             : ',data[i].prd);
+           writeln('Mata Kuliah       : ',data[i].mk);
+           writeln('Nama Dosen        : ',data[i].ds);
+           writeln('Jumlah SKS        : ',data[i].sks:1:0);
+           writeln;
+           writeln('|--------------------------------|');
+           writeln('|          Transkip Nilai        |');
+           writeln('|--------------------------------|');
+           writeln('| Nilai Absensi     : ',data[i].abs:3:1,'       |');
+           writeln('| Nilai Tugas       : ',data[i].tg:3:1,'       |');
+           writeln('| Nilai Quiz        : ',data[i].qz:3:1,'       |');
+           writeln('| Nilai UTS         : ',data[i].utsp:3:1,'      |');
+           writeln('| Nilai UAS         : ',data[i].uasp:3:1,'      |');
+           writeln('| Total Nilai       : ',data[i].total:3:1,'      |');
+		   writeln('| Huruf Mutu        : ',data[i].hf,'         |');
+           writeln('| Angka Mutu         : ',data[i].am:3:1,'     |');
+           writeln('| Keterangan         : ',data[i].ket,'        |');
+           write  ('|--------------------------------|');
+           writeln;
+         end;
+
+  end;
+
+var
+  no_menu,terus:char;
+  jml_ts:integer;
+  data_ts : tarr_mhs;
+begin
+  jml_ts:=0;
+  repeat
+    no_menu:=menu;
+    case no_menu of
+     '1' : begin
+            clrscr;
+            repeat
+              input_data(jml_ts+1,data_ts);
+              proses_data(data_ts[jml_ts+1]);
+              jml_ts:=jml_ts+1;
+              writeln;
+              write('Input Data Lagi (y/n) : ');readln(terus);
+              writeln;
+              writeln;
+            until(terus='n');
+           end;
+
+     '2' :  begin
+              clrscr;
+              output_data(jml_ts,data_ts);
+              readln;
+            end;
+
+    end;
+  until(no_menu='0');
+end.
+
